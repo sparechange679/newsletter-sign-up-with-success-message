@@ -1,0 +1,346 @@
+/* Roboto font faces - using local files */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      src: url('../fonts/roboto-v49-latin-regular.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      src: url('../fonts/roboto-v49-latin-700.woff2') format('woff2');
+    }
+
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --red: hsl(4, 100%, 67%);
+      --blue-800: hsl(234, 29%, 20%);
+      --blue-700: hsl(235, 18%, 26%);
+      --grey: hsl(0, 0%, 58%);
+      --white: hsl(0, 0%, 100%);
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--blue-700);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      line-height: 1.5;
+      color: var(--blue-800);
+    }
+
+    /* Card container */
+    .container {
+      display: flex;
+      background-color: var(--white);
+      border-radius: 36px;
+      max-width: 930px;
+      box-shadow: 0 15px 60px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+    }
+
+    /* Content section */
+    .content {
+      padding: 96px 64px 64px 40px;
+      flex: 1;
+    }
+
+    .title {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1;
+    }
+
+    .description {
+      margin-bottom: 24px;
+      font-size: 16px;
+    }
+
+    /* Features list */
+    .features {
+      list-style: none;
+      margin-bottom: 40px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .feature-icon {
+      width: 21px;
+      height: 21px;
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Form styles */
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .label-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .label {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .error-message {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+      display: none;
+    }
+
+    .input {
+      width: 100%;
+      padding: 16px 24px;
+      border: 1px solid var(--grey);
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .input:focus {
+      outline: 2px solid var(--blue-800);
+      outline-offset: 2px;
+    }
+
+    .input.error {
+      border-color: var(--red);
+      background-color: rgba(255, 97, 85, 0.15);
+      color: var(--red);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 18px;
+      background-color: var(--blue-800);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover, .btn:focus {
+      background: linear-gradient(90deg, #FF5476, #FF673E);
+      box-shadow: 0 10px 30px rgba(255, 84, 118, 0.4);
+      outline: none;
+    }
+
+    /* Image section */
+    .image-container {
+      flex: 1;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    .illustration {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+    }
+
+    /* Success message */
+    .success-message {
+      display: none;
+      background-color: var(--white);
+      border-radius: 36px;
+      max-width: 504px;
+      padding: 48px 64px 64px;
+      box-shadow: 0 15px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 40px;
+    }
+
+    .success-title {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+
+    .success-text {
+      margin-bottom: 40px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .success-email {
+      font-weight: 700;
+    }
+
+    /* Attribution */
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      color: var(--white);
+      margin-top: 20px;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    /* Tablet styles (768px - 1024px) */
+    @media (max-width: 1024px) {
+      .container {
+        max-width: 700px;
+        flex-direction: column-reverse;
+      }
+      
+      .content {
+        padding: 40px 30px;
+        order: 2;
+      }
+      
+      .title {
+        font-size: 40px;
+      }
+      
+      .image-container {
+        padding: 0;
+        order: 1;
+      }
+      
+      .illustration {
+        border-radius: 0;
+        width: 100%;
+        content: url('../images/illustration-sign-up-mobile.svg');
+      }
+      
+      .success-message {
+        max-width: 500px;
+        padding: 40px;
+      }
+      
+      .success-title {
+        font-size: 40px;
+      }
+    }
+
+    /* Mobile styles (max-width: 767px) */
+    @media (max-width: 767px) {
+      body {
+        background-color: var(--white);
+        padding: 0;
+        justify-content: flex-start;
+      }
+
+      .container {
+        flex-direction: column-reverse;
+        border-radius: 0;
+        max-width: 100%;
+        box-shadow: none;
+      }
+
+      .content {
+        padding: 40px 24px;
+      }
+
+      .title {
+        font-size: 40px;
+      }
+
+      .image-container {
+        padding: 0;
+      }
+
+      .illustration {
+        border-radius: 0;
+        width: 100%;
+        content: url('../images/illustration-sign-up-mobile.svg');
+      }
+
+      .success-message {
+        border-radius: 0;
+        max-width: 100%;
+        min-height: 100vh;
+        padding: 40px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .success-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .success-title {
+        font-size: 40px;
+        line-height: 1;
+        margin-bottom: 24px;
+      }
+      
+      .success-text {
+        line-height: 1.5;
+      }
+    }
+
+    /* Desktop-specific image */
+    @media (min-width: 1025px) {
+      .illustration {
+        content: url('../images/illustration-sign-up-desktop.svg');
+      }
+    }
+
+    /* Focus styles for accessibility */
+    .btn:focus-visible {
+      outline: 2px solid var(--blue-800);
+      outline-offset: 2px;
+    }
+    
+    .input:focus-visible {
+      outline: 2px solid var(--blue-800);
+      outline-offset: 2px;
+    }
+    
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      .btn {
+        border: 2px solid var(--blue-800);
+      }
+      
+      .input {
+        border: 2px solid var(--grey);
+      }
+    }
+    
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
